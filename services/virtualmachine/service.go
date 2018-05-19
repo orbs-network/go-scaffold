@@ -32,6 +32,7 @@ func (s *service) Start(stateStorage *statestorage.Service, stop *chan error) {
 
 func (s *service) Stop() {
 	if s.stop != nil {
+		log.Print("VirtualMachine service stopping")
 		*s.stop <- errors.New("VirtualMachine service stopped")
 		s.stop = nil
 	}

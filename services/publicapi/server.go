@@ -32,6 +32,7 @@ func (s *server) Start(service *Service, stop *chan error) {
 
 func (s *server) Stop() {
 	if s.stop != nil && s.httpServer != nil {
+		log.Print("PublicApi server stopping")
 		*s.stop <- s.httpServer.Shutdown(nil)
 		s.stop = nil
 	}
@@ -45,5 +46,8 @@ func (s *server) createRouter() *http.ServeMux {
 }
 
 func (s *server) startHttp() {
-	*s.stop <- s.httpServer.ListenAndServe()
+	err := s.httpServer.ListenAndServe()
+	if err != nil && s.stop != nil {
+		*s.stop <- err
+	}
 }

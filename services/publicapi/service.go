@@ -32,6 +32,7 @@ func (s *service) Start(virtualMachine *virtualmachine.Service, stop *chan error
 
 func (s *service) Stop() {
 	if s.stop != nil {
+		log.Print("PublicApi service stopping")
 		*s.stop <- errors.New("PublicApi service stopped")
 		s.stop = nil
 	}

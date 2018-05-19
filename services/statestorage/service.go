@@ -29,6 +29,7 @@ func (s *service) Start(stop *chan error) {
 
 func (s *service) Stop() {
 	if s.stop != nil {
+		log.Print("StateStorage service stopping")
 		*s.stop <- errors.New("StateStorage service stopped")
 		s.stop = nil
 	}
