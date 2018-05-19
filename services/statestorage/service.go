@@ -14,10 +14,13 @@ type Service interface {
 
 type service struct {
 	stop *chan error
+	db map[string]int32
 }
 
 func NewService() Service {
-	return &service{}
+	return &service{
+		db: make(map[string]int32),
+	}
 }
 
 func (s *service) Start(stop *chan error) {

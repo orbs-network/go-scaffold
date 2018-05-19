@@ -28,9 +28,9 @@ cd src/github.com/orbs-network/go-experiment
 git checkout master
 ```
 
-* Build with `go install`.
+* Build with `go install`
 
-* Install dependencies with `go get -t ./...`.
+* Install dependencies with `go get -t ./...`
 > TODO: make sure this phase is required here
 
 ## Run
@@ -49,7 +49,16 @@ go run *.go
 
 ## Test
 
+* Run **all** tests from project root with `ginkgo ./...`
+
+* Another alternative runner with minimal UI is `go test ./...`
+
 #### E2E Spec
 > End to end tests (server only) checking compliance to spec
 
-* Run the suite from project root with `ginkgo -v ./e2e/spec/`.
+* Run the suite from project root with `ginkgo -v ./e2e/spec/`
+
+#### Service Spec
+> Component test checking a single service compliance to spec
+
+* For StateStorage, run the suite from project root with `ginkgo -v ./services/statestorage/spec`
