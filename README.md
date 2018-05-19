@@ -12,6 +12,12 @@
 * Make sure Git is installed (version 2 or later).
   > Verify with `git --version`
 
+## Prerequisites for tests
+
+* Make sure [Ginkgo](http://onsi.github.io/ginkgo/#getting-ginkgo) is installed.
+  > Install with `go get github.com/onsi/ginkgo/ginkgo`
+  > Verify with `ginkgo version`
+
 ## Build
 
 * Clone the repo to your Go workspace:
@@ -29,15 +35,21 @@ git checkout master
 
 ## Run
 
-* To run the pre-built binary:
+* To run the pre-built binary (should be in path):
 ```
-cd `go env GOPATH`
-./bin/go-experiment
+go-experiment
 ```
 
-* To rebuild from source and run:
+* To rebuild from source and run (this will take you to project root):
 ```
 cd `go env GOPATH`
 cd src/github.com/orbs-network/go-experiment
 go run *.go
 ```
+
+## Test
+
+#### E2E Spec
+> End to end tests (server only) checking compliance to spec
+
+* Run the suite from project root with `ginkgo -v ./e2e/spec/`.
