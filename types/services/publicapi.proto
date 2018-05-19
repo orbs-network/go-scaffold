@@ -1,0 +1,28 @@
+syntax = "proto3";
+package publicapi;
+option go_package = "github.com/orbs-network/go-experiment/types/services/publicapi";
+
+import "protocol/transactions.proto";
+
+service PublicApi {
+  rpc Transfer (TransferInput) returns (TransferOutput);
+  rpc GetBalance (GetBalanceInput) returns (GetBalanceOutput);
+}
+
+message TransferInput {
+  protocol.Transaction transaction = 1;
+}
+
+message TransferOutput {
+  string success = 1;
+  int32 result = 2;
+}
+
+message GetBalanceInput {
+  protocol.Address from = 1;
+}
+
+message GetBalanceOutput {
+  string success = 1;
+  int32 result = 2;
+}

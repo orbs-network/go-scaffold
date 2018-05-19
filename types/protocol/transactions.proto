@@ -1,0 +1,13 @@
+syntax = "proto3";
+package protocol;
+option go_package = "github.com/orbs-network/go-experiment/types/protocol";
+
+message Address {
+  string username = 1;
+}
+
+message Transaction {
+  Address from = 1;
+  Address to = 2;
+  int32 amount = 3;
+}

@@ -1,0 +1,24 @@
+syntax = "proto3";
+package statestorage;
+option go_package = "github.com/orbs-network/go-experiment/types/services/statestorage";
+
+service StateStorage {
+  rpc WriteKey (WriteKeyInput) returns (WriteKeyOutput);
+  rpc ReadKey (ReadKeyInput) returns (ReadKeyOutput);
+}
+
+message WriteKeyInput {
+  string key = 1;
+  int32 value = 2;
+}
+
+message WriteKeyOutput {
+}
+
+message ReadKeyInput {
+  string key = 1;
+}
+
+message ReadKeyOutput {
+  int32 value = 1;
+}
