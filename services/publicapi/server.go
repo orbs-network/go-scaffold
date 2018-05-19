@@ -1,7 +1,6 @@
 package publicapi
 
 import (
-	"errors"
 	"net/http"
 	"log"
 )
@@ -14,6 +13,7 @@ type Server interface {
 type server struct {
 	stop *chan error
 	service *Service
+	httpServer *http.Server
 }
 
 func NewServer() Server {
@@ -24,20 +24,26 @@ func (s *server) Start(service *Service, stop *chan error) {
 	if s.stop == nil {
 		s.stop = stop
 		s.service = service
+		s.httpServer = &http.Server{Addr: ":8080", Handler: s.createRouter()}
 		go s.startHttp()
 		log.Print("PublicApi server started")
 	}
 }
 
 func (s *server) Stop() {
-	if s.stop != nil {
-		*s.stop <- errors.New("PublicApi server stopped")
+	if s.stop != nil && s.httpServer != nil {
+		*s.stop <- s.httpServer.Shutdown(nil)
 		s.stop = nil
 	}
 }
 
+func (s *server) createRouter() *http.ServeMux {
+	router := http.NewServeMux()
+	router.HandleFunc("/api/transfer", s.transferHandler)
+	router.HandleFunc("/api/balance", s.balanceHandler)
+	return router
+}
+
 func (s *server) startHttp() {
-	http.HandleFunc("/transfer/", s.transferHandler)
-	http.HandleFunc("/balance/", s.balanceHandler)
-	*s.stop <- http.ListenAndServe(":8000", nil)
+	*s.stop <- s.httpServer.ListenAndServe()
 }

@@ -24,6 +24,9 @@ git checkout master
 
 * Build with `go install`.
 
+* Install dependencies with `go get -t ./...`.
+> TODO: make sure this phase is required here
+
 ## Run
 
 * To run the pre-built binary:
@@ -36,5 +39,5 @@ cd `go env GOPATH`
 ```
 cd `go env GOPATH`
 cd src/github.com/orbs-network/go-experiment
-go run main.go
+go run *.go
 ```
