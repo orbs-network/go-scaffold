@@ -9,20 +9,20 @@ import (
 
 type Service interface {
 	virtualmachine.Methods
-	Start(stateStorage *statestorage.Service, stop *chan error)
+	Start(stateStorage statestorage.Service, stop *chan error)
 	Stop()
 }
 
 type service struct {
 	stop *chan error
-	stateStorage *statestorage.Service
+	stateStorage statestorage.Service
 }
 
 func NewService() Service {
 	return &service{}
 }
 
-func (s *service) Start(stateStorage *statestorage.Service, stop *chan error) {
+func (s *service) Start(stateStorage statestorage.Service, stop *chan error) {
 	if s.stop == nil {
 		s.stop = stop
 		s.stateStorage = stateStorage

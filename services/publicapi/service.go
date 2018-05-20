@@ -9,20 +9,20 @@ import (
 
 type Service interface {
 	publicapi.Methods
-	Start(virtualMachine *virtualmachine.Service, stop *chan error)
+	Start(virtualMachine virtualmachine.Service, stop *chan error)
 	Stop()
 }
 
 type service struct {
 	stop *chan error
-	virtualMachine *virtualmachine.Service
+	virtualMachine virtualmachine.Service
 }
 
 func NewService() Service {
 	return &service{}
 }
 
-func (s *service) Start(virtualMachine *virtualmachine.Service, stop *chan error) {
+func (s *service) Start(virtualMachine virtualmachine.Service, stop *chan error) {
 	if s.stop == nil {
 		s.stop = stop
 		s.virtualMachine = virtualMachine

@@ -33,9 +33,9 @@ func (n *node) Start(stop *chan error) {
 	if n.stop == nil {
 		n.stop = stop
 		n.stateStorage.Start(stop)
-		n.virtualMachine.Start(&n.stateStorage, stop)
-		n.publicApi.Start(&n.virtualMachine, stop)
-		n.publicApiServer.Start(&n.publicApi, stop)
+		n.virtualMachine.Start(n.stateStorage, stop)
+		n.publicApi.Start(n.virtualMachine, stop)
+		n.publicApiServer.Start(n.publicApi, stop)
 		log.Print("Node (as a whole) started")
 	}
 }

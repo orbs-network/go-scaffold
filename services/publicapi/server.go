@@ -6,13 +6,13 @@ import (
 )
 
 type Server interface {
-	Start(service *Service, stop *chan error)
+	Start(service Service, stop *chan error)
 	Stop()
 }
 
 type server struct {
 	stop *chan error
-	service *Service
+	service Service
 	httpServer *http.Server
 }
 
@@ -20,7 +20,7 @@ func NewServer() Server {
 	return &server{}
 }
 
-func (s *server) Start(service *Service, stop *chan error) {
+func (s *server) Start(service Service, stop *chan error) {
 	if s.stop == nil {
 		s.stop = stop
 		s.service = service
