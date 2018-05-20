@@ -9,7 +9,7 @@ func (s *service) WriteKey(input *statestorage.WriteKeyInput) (*statestorage.Wri
 	if input == nil {
 		return nil, &errors.ErrInvalidInput{Argument: "WriteKeyInput", Method: "StateStorage.WriteKey"}
 	}
-	if (input.Key == "") {
+	if input.Key == "" {
 		return nil, &errors.ErrInvalidInput{Argument: "Key", Method: "StateStorage.WriteKey"}
 	}
 	s.db[input.Key] = input.Value
@@ -20,7 +20,7 @@ func (s *service) ReadKey(input *statestorage.ReadKeyInput) (*statestorage.ReadK
 	if input == nil {
 		return nil, &errors.ErrInvalidInput{Argument: "ReadKeyInput", Method: "StateStorage.ReadKey"}
 	}
-	if (input.Key == "") {
+	if input.Key == "" {
 		return nil, &errors.ErrInvalidInput{Argument: "Key", Method: "StateStorage.ReadKey"}
 	}
 	value, ok := s.db[input.Key]

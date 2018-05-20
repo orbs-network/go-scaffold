@@ -62,3 +62,5 @@ go run *.go
 > Component test checking a single service compliance to spec
 
 * For StateStorage, run the suite from project root with `ginkgo -v ./services/statestorage/spec`
+
+* For VirtualMachine, run the suite from project root with `ginkgo -v  ./services/virtualmachine/spec`
