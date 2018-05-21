@@ -64,3 +64,5 @@ go run *.go
 * For StateStorage, run the suite from project root with `ginkgo -v ./services/statestorage/spec`
 
 * For VirtualMachine, run the suite from project root with `ginkgo -v  ./services/virtualmachine/spec`
+
+* For PublicApi, run the suite from project root with `ginkgo -v  ./services/publicapi/spec`
