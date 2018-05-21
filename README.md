@@ -58,6 +58,11 @@ go run *.go
 
 * Run the suite from project root with `ginkgo -v ./e2e/spec/`
 
+#### E2E Stress
+> End to end tests (server only) under extreme random load
+
+* Run the suite from project root with `ginkgo -v ./e2e/stress/`
+
 #### Service Spec
 > Component test checking a single service compliance to spec
 
