@@ -3,9 +3,14 @@ package virtualmachine
 import "github.com/orbs-network/go-experiment/types/services/statestorage"
 
 func (s *service) processTransfer(fromUsername string, toUsername string, amount int32) (int32, error) {
+	s.transactionSync.Lock()
+	defer s.transactionSync.Unlock()
 	fromBalance, err := s.stateStorage.ReadKey(&statestorage.ReadKeyInput{Key: fromUsername})
 	if err != nil {
 		return 0, err
+	}
+	if fromUsername == toUsername {
+		return fromBalance.Value, nil
 	}
 	toBalance, err := s.stateStorage.ReadKey(&statestorage.ReadKeyInput{Key: toUsername})
 	if err != nil {

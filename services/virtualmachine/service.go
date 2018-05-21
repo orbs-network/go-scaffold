@@ -5,6 +5,7 @@ import (
 	"github.com/orbs-network/go-experiment/types/services/virtualmachine"
 	"errors"
 	"log"
+	"sync"
 )
 
 type Service interface {
@@ -15,11 +16,14 @@ type Service interface {
 
 type service struct {
 	stop *chan error
+	transactionSync *sync.Mutex
 	stateStorage statestorage.Service
 }
 
 func NewService() Service {
-	return &service{}
+	return &service{
+		transactionSync: &sync.Mutex{},
+	}
 }
 
 func (s *service) Start(stateStorage statestorage.Service, stop *chan error) {
