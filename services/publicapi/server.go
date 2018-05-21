@@ -3,6 +3,8 @@ package publicapi
 import (
 	"net/http"
 	"log"
+	"context"
+	"time"
 )
 
 type Server interface {
@@ -33,7 +35,8 @@ func (s *server) Start(service Service, stop *chan error) {
 func (s *server) Stop() {
 	if s.stop != nil && s.httpServer != nil {
 		log.Print("PublicApi server stopping")
-		*s.stop <- s.httpServer.Shutdown(nil)
+		ctx, _ := context.WithTimeout(context.Background(), time.Second*5)
+		*s.stop <- s.httpServer.Shutdown(ctx)
 		s.stop = nil
 	}
 }
