@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func TestStateStorageSpec(t *testing.T) {
+func TestPublicApiSpec(t *testing.T) {
 	RegisterFailHandler(Fail)
 	RunSpecs(t, "PublicApi Service Spec Suite")
 }

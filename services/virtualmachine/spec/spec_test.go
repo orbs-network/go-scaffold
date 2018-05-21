@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func TestStateStorageSpec(t *testing.T) {
+func TestVirtualMachineSpec(t *testing.T) {
 	RegisterFailHandler(Fail)
 	RunSpecs(t, "VirtualMachine Service Spec Suite")
 }
