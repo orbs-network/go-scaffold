@@ -1,5 +1,3 @@
-//+build !coverage
-
 package statestorage
 
 import (

@@ -9,6 +9,7 @@ import (
 	"github.com/orbs-network/go-scaffold/types/services/virtualmachine"
 	"github.com/orbs-network/go-scaffold/types/protocol"
 	"github.com/orbs-network/go-scaffold/types/services/statestorage"
+	"github.com/orbs-network/go-scaffold/utils/logger"
 )
 
 var _ = Describe("Contracts", func() {
@@ -21,7 +22,7 @@ var _ = Describe("Contracts", func() {
 
 	BeforeEach(func() {
 		stop = make(chan error, 10)
-		service = uut.NewService()
+		service = uut.NewService(logger.DefaultLogger("test"))
 		stateStorage = &_statestorage.MockService{}
 		service.Start(stateStorage, &stop)
 	})

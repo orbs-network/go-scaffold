@@ -60,7 +60,7 @@ go run *.go
   
 * Check unit test coverage with:
     ```
-    go test -cover -tags coverage `go list ./... | grep -v /stress | grep -v /spec | grep -v /types/`
+    go test -cover `go list ./... | grep -v /stress | grep -v /spec | grep -v /types/`
     ```
 
 ##### E2E Spec

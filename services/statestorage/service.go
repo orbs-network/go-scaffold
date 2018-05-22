@@ -28,7 +28,7 @@ func NewService(logger logger.Interface) Service {
 
 func (s *service) Start(stop *chan error) {
 	if stop == nil {
-		panic("stop channel not given")
+		panic("required arguments not given")
 	}
 	if s.stop == nil {
 		s.stop = stop

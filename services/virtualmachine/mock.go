@@ -11,11 +11,15 @@ type MockService struct {
 }
 
 func (s *MockService) Start(stateStorage statestorage.Service, stop *chan error) {
-	s.Called(stop)
+	s.Called(stateStorage, stop)
 }
 
 func (s *MockService) Stop() {
 	s.Called()
+}
+
+func (s *MockService) IsStarted() bool {
+	return s.Called().Bool(0)
 }
 
 func (s *MockService) ProcessTransaction(input *virtualmachine.ProcessTransactionInput) (*virtualmachine.ProcessTransactionOutput, error) {

@@ -21,12 +21,11 @@ type node struct {
 	publicApiServer publicapi.Server
 }
 
-func NewNode() Node {
-	logger := logger.DefaultLogger("node1")
+func NewNode(logger logger.Interface) Node {
 	return &node{
 		logger: logger,
 		publicApi: publicapi.NewService(),
-		virtualMachine: virtualmachine.NewService(),
+		virtualMachine: virtualmachine.NewService(logger),
 		stateStorage: statestorage.NewService(logger),
 		publicApiServer: publicapi.NewServer(),
 	}

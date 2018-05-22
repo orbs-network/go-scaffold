@@ -5,6 +5,7 @@ import (
 	. "github.com/onsi/gomega"
 	. "github.com/orbs-network/go-scaffold/utils/testing"
 	"github.com/orbs-network/go-scaffold/services"
+	"github.com/orbs-network/go-scaffold/utils/logger"
 	"net/http"
 	"fmt"
 	"time"
@@ -27,7 +28,7 @@ var _ = Describe("Transactions", func() {
 
 	BeforeEach(func() {
 		stop = make(chan error, 10)
-		node = services.NewNode()
+		node = services.NewNode(&logger.StubLogger{})
 		node.Start(&stop)
 	})
 
