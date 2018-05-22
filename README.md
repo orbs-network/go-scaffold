@@ -6,7 +6,7 @@
   > Verify with `go version`
 
 * Make sure [Go workspace bin](https://stackoverflow.com/questions/42965673/cant-run-go-bin-in-terminal) is in your path.
-  > Install with `export PATH=$PATH:``go env GOPATH``/bin`
+  > Install with ``export PATH=$PATH:`go env GOPATH`/bin``
   > Verify with `echo $PATH`
 
 * Make sure Git is installed (version 2 or later).
@@ -28,10 +28,9 @@ cd src/github.com/orbs-network/go-experiment
 git checkout master
 ```
 
-* Build with `go install`
-
 * Install dependencies with `go get -t ./...`
-> TODO: make sure this phase is required here
+
+* Build with `go install`
 
 ## Run
 
@@ -53,11 +52,16 @@ go run *.go
 
 * Run everything **except stress** with `ginkgo --skip=Stress ./...`
 
-* Another alternative runner with minimal UI and caching:
+* Another alternative runner with minimal UI and result caching:
 
   * Run **all** tests with `go test ./...`
   
   * Run everything **except stress** with `go test -short ./...`
+  
+* Check unit test coverage with:
+    ```
+    go test -cover -tags coverage `go list ./... | grep -v /stress | grep -v /spec | grep -v /types/`
+    ```
 
 ##### E2E Spec
 > End to end tests (server only) checking compliance to spec
