@@ -10,7 +10,7 @@ import (
 )
 
 func (s *server) transferHandler(w http.ResponseWriter, r *http.Request) {
-	from , err := parseStringParameter(r.URL, "from")
+	from, err := parseStringParameter(r.URL, "from")
 	if err != nil {
 		w.Write([]byte(fmt.Sprintf("error: %s", err.Error())))
 		return
@@ -39,7 +39,7 @@ func (s *server) transferHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func (s *server) balanceHandler(w http.ResponseWriter, r *http.Request) {
-	from , err := parseStringParameter(r.URL, "from")
+	from, err := parseStringParameter(r.URL, "from")
 	if err != nil {
 		w.Write([]byte(fmt.Sprintf("error: %s", err.Error())))
 		return

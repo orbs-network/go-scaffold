@@ -54,7 +54,8 @@ go run *.go
 
 * Another alternative runner with minimal UI and result caching:
 
-  * Run **all** tests with `go test ./...`
+  * Run **all** tests with `go test ./...` 
+    > Note: E2E is flaky here for some reason
   
   * Run everything **except stress** with `go test -short ./...`
   

@@ -8,6 +8,7 @@ import (
 	_virtualmachine "github.com/orbs-network/go-scaffold/services/virtualmachine"
 	"github.com/orbs-network/go-scaffold/types/services/virtualmachine"
 	"github.com/orbs-network/go-scaffold/types/protocol"
+	"github.com/orbs-network/go-scaffold/utils/logger"
 	"net/http"
 )
 
@@ -22,8 +23,8 @@ var _ = Describe("HTTP", func() {
 
 	BeforeEach(func() {
 		stop = make(chan error, 10)
-		service = uut.NewService()
-		server = uut.NewServer()
+		service = uut.NewService(&logger.StubLogger{})
+		server = uut.NewServer(&logger.StubLogger{})
 		virtualMachine = &_virtualmachine.MockService{}
 		service.Start(virtualMachine, &stop)
 		server.Start(service, &stop)

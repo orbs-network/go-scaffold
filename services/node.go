@@ -24,10 +24,10 @@ type node struct {
 func NewNode(logger logger.Interface) Node {
 	return &node{
 		logger: logger,
-		publicApi: publicapi.NewService(),
+		publicApi: publicapi.NewService(logger),
 		virtualMachine: virtualmachine.NewService(logger),
 		stateStorage: statestorage.NewService(logger),
-		publicApiServer: publicapi.NewServer(),
+		publicApiServer: publicapi.NewServer(logger),
 	}
 }
 
