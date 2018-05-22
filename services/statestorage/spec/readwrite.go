@@ -47,4 +47,14 @@ var _ = Describe("Read Write", func() {
 		Expect(out.Value).To(BeEquivalentTo(867))
 	})
 
+	It("should not update a value with different key", func() {
+		_, err := service.WriteKey(&statestorage.WriteKeyInput{Key: "address111", Value: 2003})
+		Expect(err).ToNot(HaveOccurred())
+		_, err = service.WriteKey(&statestorage.WriteKeyInput{Key: "address222", Value: 867})
+		Expect(err).ToNot(HaveOccurred())
+		out, err := service.ReadKey(&statestorage.ReadKeyInput{Key: "address111"})
+		Expect(err).ToNot(HaveOccurred())
+		Expect(out.Value).To(BeEquivalentTo(2003))
+	})
+
 })
