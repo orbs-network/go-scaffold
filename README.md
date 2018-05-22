@@ -51,19 +51,25 @@ go run *.go
 
 * Run **all** tests from project root with `ginkgo ./...`
 
-* Another alternative runner with minimal UI is `go test ./...`
+* Run everything **except stress** with `ginkgo --skip=Stress ./...`
 
-#### E2E Spec
+* Another alternative runner with minimal UI and caching:
+
+  * Run **all** tests with `go test ./...`
+  
+  * Run everything **except stress** with `go test -short ./...`
+
+##### E2E Spec
 > End to end tests (server only) checking compliance to spec
 
 * Run the suite from project root with `ginkgo -v ./e2e/spec/`
 
-#### E2E Stress
+##### E2E Stress
 > End to end tests (server only) under extreme random load
 
 * Run the suite from project root with `ginkgo -v ./e2e/stress/`
 
-#### Service Spec
+##### Service Spec
 > Component test checking a single service compliance to spec
 
 * For StateStorage, run the suite from project root with `ginkgo -v ./services/statestorage/spec`
