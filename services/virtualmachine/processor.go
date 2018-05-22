@@ -1,6 +1,6 @@
 package virtualmachine
 
-import "github.com/orbs-network/go-experiment/types/services/statestorage"
+import "github.com/orbs-network/go-scaffold/types/services/statestorage"
 
 func (s *service) processTransfer(fromUsername string, toUsername string, amount int32) (int32, error) {
 	s.transactionSync.Lock()

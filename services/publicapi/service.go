@@ -1,8 +1,8 @@
 package publicapi
 
 import (
-	"github.com/orbs-network/go-experiment/services/virtualmachine"
-	"github.com/orbs-network/go-experiment/types/services/publicapi"
+	"github.com/orbs-network/go-scaffold/services/virtualmachine"
+	"github.com/orbs-network/go-scaffold/types/services/publicapi"
 	"errors"
 	"log"
 )

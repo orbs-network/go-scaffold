@@ -1,10 +1,10 @@
 package services
 
 import (
-	"github.com/orbs-network/go-experiment/services/publicapi"
-	"github.com/orbs-network/go-experiment/services/virtualmachine"
-	"github.com/orbs-network/go-experiment/services/statestorage"
-	"github.com/orbs-network/go-experiment/utils/logger"
+	"github.com/orbs-network/go-scaffold/services/publicapi"
+	"github.com/orbs-network/go-scaffold/services/virtualmachine"
+	"github.com/orbs-network/go-scaffold/services/statestorage"
+	"github.com/orbs-network/go-scaffold/utils/logger"
 )
 
 type Node interface {

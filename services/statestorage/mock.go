@@ -4,7 +4,7 @@ package statestorage
 
 import (
 	"github.com/maraino/go-mock"
-	"github.com/orbs-network/go-experiment/types/services/statestorage"
+	"github.com/orbs-network/go-scaffold/types/services/statestorage"
 )
 
 type MockService struct {

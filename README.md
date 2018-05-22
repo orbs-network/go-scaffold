@@ -1,4 +1,4 @@
-# Go Experiment
+# Go Scaffold
 
 ## Prerequisites
 
@@ -23,8 +23,8 @@
 * Clone the repo to your Go workspace:
 ```
 cd `go env GOPATH`
-go get github.com/orbs-network/go-experiment
-cd src/github.com/orbs-network/go-experiment
+go get github.com/orbs-network/go-scaffold
+cd src/github.com/orbs-network/go-scaffold
 git checkout master
 ```
 
@@ -36,13 +36,13 @@ git checkout master
 
 * To run the pre-built binary (should be in path):
 ```
-go-experiment
+go-scaffold
 ```
 
 * To rebuild from source and run (this will take you to project root):
 ```
 cd `go env GOPATH`
-cd src/github.com/orbs-network/go-experiment
+cd src/github.com/orbs-network/go-scaffold
 go run *.go
 ```
 

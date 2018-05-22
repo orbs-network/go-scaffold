@@ -1,6 +1,6 @@
 syntax = "proto3";
 package publicapi;
-option go_package = "github.com/orbs-network/go-experiment/types/services/publicapi";
+option go_package = "github.com/orbs-network/go-scaffold/types/services/publicapi";
 
 import "protocol/transactions.proto";
 

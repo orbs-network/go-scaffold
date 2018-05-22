@@ -3,8 +3,8 @@ package statestorage
 import (
 	. "github.com/onsi/gomega"
 	"testing"
-	"github.com/orbs-network/go-experiment/types/services/statestorage"
-	"github.com/orbs-network/go-experiment/utils/logger"
+	"github.com/orbs-network/go-scaffold/types/services/statestorage"
+	"github.com/orbs-network/go-scaffold/utils/logger"
 )
 
 var writeTable = []struct{

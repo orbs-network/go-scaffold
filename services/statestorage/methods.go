@@ -1,8 +1,8 @@
 package statestorage
 
 import (
-	"github.com/orbs-network/go-experiment/types/services/statestorage"
-	"github.com/orbs-network/go-experiment/utils/errors"
+	"github.com/orbs-network/go-scaffold/types/services/statestorage"
+	"github.com/orbs-network/go-scaffold/utils/errors"
 )
 
 func (s *service) WriteKey(input *statestorage.WriteKeyInput) (*statestorage.WriteKeyOutput, error) {

@@ -2,8 +2,8 @@ package virtualmachine
 
 import (
 	"github.com/maraino/go-mock"
-	"github.com/orbs-network/go-experiment/services/statestorage"
-	"github.com/orbs-network/go-experiment/types/services/virtualmachine"
+	"github.com/orbs-network/go-scaffold/services/statestorage"
+	"github.com/orbs-network/go-scaffold/types/services/virtualmachine"
 )
 
 type MockService struct {

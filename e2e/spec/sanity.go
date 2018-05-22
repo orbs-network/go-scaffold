@@ -3,8 +3,8 @@ package spec
 import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	. "github.com/orbs-network/go-experiment/utils/testing"
-	"github.com/orbs-network/go-experiment/services"
+	. "github.com/orbs-network/go-scaffold/utils/testing"
+	"github.com/orbs-network/go-scaffold/services"
 	"net/http"
 )
 

@@ -2,7 +2,7 @@ package statestorage
 
 import (
 	. "github.com/onsi/gomega"
-	"github.com/orbs-network/go-experiment/utils/logger"
+	"github.com/orbs-network/go-scaffold/utils/logger"
 	"testing"
 )
 

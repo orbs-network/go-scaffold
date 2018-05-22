@@ -2,8 +2,8 @@ package publicapi
 
 import (
 	"net/http"
-	"github.com/orbs-network/go-experiment/types/services/publicapi"
-	"github.com/orbs-network/go-experiment/types/protocol"
+	"github.com/orbs-network/go-scaffold/types/services/publicapi"
+	"github.com/orbs-network/go-scaffold/types/protocol"
 	"fmt"
 	"strconv"
 	"net/url"

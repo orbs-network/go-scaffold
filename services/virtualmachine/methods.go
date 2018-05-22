@@ -1,8 +1,8 @@
 package virtualmachine
 
 import (
-	"github.com/orbs-network/go-experiment/types/services/virtualmachine"
-	"github.com/orbs-network/go-experiment/utils/errors"
+	"github.com/orbs-network/go-scaffold/types/services/virtualmachine"
+	"github.com/orbs-network/go-scaffold/utils/errors"
 )
 
 func (s *service) ProcessTransaction(input *virtualmachine.ProcessTransactionInput) (*virtualmachine.ProcessTransactionOutput, error) {

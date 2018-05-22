@@ -1,6 +1,6 @@
 syntax = "proto3";
 package statestorage;
-option go_package = "github.com/orbs-network/go-experiment/types/services/statestorage";
+option go_package = "github.com/orbs-network/go-scaffold/types/services/statestorage";
 
 service StateStorage {
   rpc WriteKey (WriteKeyInput) returns (WriteKeyOutput);

@@ -1,6 +1,6 @@
 syntax = "proto3";
 package protocol;
-option go_package = "github.com/orbs-network/go-experiment/types/protocol";
+option go_package = "github.com/orbs-network/go-scaffold/types/protocol";
 
 message Address {
   string username = 1;

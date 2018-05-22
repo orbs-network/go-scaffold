@@ -1,6 +1,6 @@
 syntax = "proto3";
 package virtualmachine;
-option go_package = "github.com/orbs-network/go-experiment/types/services/virtualmachine";
+option go_package = "github.com/orbs-network/go-scaffold/types/services/virtualmachine";
 
 import "protocol/transactions.proto";
 

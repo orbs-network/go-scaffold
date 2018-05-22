@@ -3,9 +3,9 @@ package spec
 import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	uut "github.com/orbs-network/go-experiment/services/statestorage"
-	"github.com/orbs-network/go-experiment/types/services/statestorage"
-	"github.com/orbs-network/go-experiment/utils/logger"
+	uut "github.com/orbs-network/go-scaffold/services/statestorage"
+	"github.com/orbs-network/go-scaffold/types/services/statestorage"
+	"github.com/orbs-network/go-scaffold/utils/logger"
 )
 
 var _ = Describe("Read Write", func() {

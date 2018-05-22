@@ -3,11 +3,11 @@ package spec
 import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	. "github.com/orbs-network/go-experiment/utils/testing"
-	uut "github.com/orbs-network/go-experiment/services/publicapi"
-	_virtualmachine "github.com/orbs-network/go-experiment/services/virtualmachine"
-	"github.com/orbs-network/go-experiment/types/services/virtualmachine"
-	"github.com/orbs-network/go-experiment/types/protocol"
+	. "github.com/orbs-network/go-scaffold/utils/testing"
+	uut "github.com/orbs-network/go-scaffold/services/publicapi"
+	_virtualmachine "github.com/orbs-network/go-scaffold/services/virtualmachine"
+	"github.com/orbs-network/go-scaffold/types/services/virtualmachine"
+	"github.com/orbs-network/go-scaffold/types/protocol"
 	"net/http"
 )
 

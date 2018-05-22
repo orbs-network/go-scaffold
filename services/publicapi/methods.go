@@ -1,9 +1,9 @@
 package publicapi
 
 import (
-	"github.com/orbs-network/go-experiment/types/services/publicapi"
-	"github.com/orbs-network/go-experiment/utils/errors"
-	"github.com/orbs-network/go-experiment/types/services/virtualmachine"
+	"github.com/orbs-network/go-scaffold/types/services/publicapi"
+	"github.com/orbs-network/go-scaffold/utils/errors"
+	"github.com/orbs-network/go-scaffold/types/services/virtualmachine"
 )
 
 func (s *service) Transfer(input *publicapi.TransferInput) (*publicapi.TransferOutput, error) {

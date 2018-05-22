@@ -25,7 +25,7 @@ Types and interfaces are defined with [protobuf](https://developers.google.com/p
 * Compile all `.proto` files to `.go` files from within this directory:
 ```
 cd `go env GOPATH`
-cd src/github.com/orbs-network/go-experiment/types
+cd src/github.com/orbs-network/go-scaffold/types
 rm ./**/*.pb.go
 protowrap -I. --go_out `go env GOPATH`/src ./**/*.proto
 ```

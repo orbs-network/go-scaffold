@@ -3,12 +3,12 @@ package spec
 import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	. "github.com/orbs-network/go-experiment/utils/testing"
-	uut "github.com/orbs-network/go-experiment/services/virtualmachine"
-	_statestorage "github.com/orbs-network/go-experiment/services/statestorage"
-	"github.com/orbs-network/go-experiment/types/services/virtualmachine"
-	"github.com/orbs-network/go-experiment/types/protocol"
-	"github.com/orbs-network/go-experiment/types/services/statestorage"
+	. "github.com/orbs-network/go-scaffold/utils/testing"
+	uut "github.com/orbs-network/go-scaffold/services/virtualmachine"
+	_statestorage "github.com/orbs-network/go-scaffold/services/statestorage"
+	"github.com/orbs-network/go-scaffold/types/services/virtualmachine"
+	"github.com/orbs-network/go-scaffold/types/protocol"
+	"github.com/orbs-network/go-scaffold/types/services/statestorage"
 )
 
 var _ = Describe("Transactions", func() {

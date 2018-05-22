@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/orbs-network/go-experiment/services"
+	"github.com/orbs-network/go-scaffold/services"
 	"log"
 )
 
