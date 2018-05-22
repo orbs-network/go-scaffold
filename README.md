@@ -1,5 +1,11 @@
 # Go Scaffold
 
+A simple project with 3 microservices all running in the same process for easy debugging (using protobuf as interface but without using gRPC as a transport layer).
+
+HTTP requests are sent to *PublicApi* then forwarded for execution by *VirtualMachine* which relies on *StateStorage* to read/write state. This process involves a single node only.
+
+The project is thoroughly tested with unit tests (100% coverage), component tests per microservice (defining its spec), E2E tests (defining the full system spec) and E2E stress tests (running the system under load).
+
 ## Prerequisites
 
 * Make sure [Go](https://golang.org/doc/install) is installed (version 1.10 or later).
