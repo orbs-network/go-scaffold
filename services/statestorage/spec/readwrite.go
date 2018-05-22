@@ -5,6 +5,7 @@ import (
 	. "github.com/onsi/gomega"
 	uut "github.com/orbs-network/go-experiment/services/statestorage"
 	"github.com/orbs-network/go-experiment/types/services/statestorage"
+	"github.com/orbs-network/go-experiment/utils/logger"
 )
 
 var _ = Describe("Read Write", func() {
@@ -16,7 +17,7 @@ var _ = Describe("Read Write", func() {
 
 	BeforeEach(func() {
 		stop = make(chan error, 10)
-		service = uut.NewService()
+		service = uut.NewService(logger.DefaultLogger("test"))
 		service.Start(&stop)
 	})
 
