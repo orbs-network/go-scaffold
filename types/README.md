@@ -12,7 +12,7 @@ Types and interfaces are defined with [protobuf](https://developers.google.com/p
 
 * Make sure [Go workspace bin](https://stackoverflow.com/questions/42965673/cant-run-go-bin-in-terminal) is in your path.
   
-  > Install with `export PATH=$PATH:``go env GOPATH``/bin`
+  > Install with ``export PATH=$PATH:`go env GOPATH`/bin``
   
   > Verify with `echo $PATH`
 
