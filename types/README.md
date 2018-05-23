@@ -34,11 +34,11 @@ Types and interfaces are defined with [protobuf](https://developers.google.com/p
 ```
 cd `go env GOPATH`
 cd src/github.com/orbs-network/go-scaffold/types
-rm ./**/*.pb.go
+rm  `find . -name "*.pb.go"`
 protowrap -I. --go_out `go env GOPATH`/src ./**/*.proto
 ```
 
-* It is recommended to push all generated `.go` files to git as well.
+* You should push all generated `.go` files to git as well.
 
 ## Todo
 
