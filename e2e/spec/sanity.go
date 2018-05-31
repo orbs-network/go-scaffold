@@ -33,8 +33,8 @@ var _ = Describe("Sanity", func() {
 		Expect(ResponseBodyAsString(resp)).To(Equal("0"))
 	})
 
-	It("should transfer funds with GET /api/transfer", func() {
-		resp, err := http.Get("http://localhost:8080/api/transfer?from=user1&to=user2&amount=17")
+	It("should transfer funds with POST /api/transfer", func() {
+		resp, err := http.Post("http://localhost:8080/api/transfer?from=user1&to=user2&amount=17", "text/plain", nil)
 		Expect(err).ToNot(HaveOccurred())
 		Expect(resp.StatusCode).To(Equal(http.StatusOK))
 		Expect(ResponseBodyAsString(resp)).To(Equal("-17"))

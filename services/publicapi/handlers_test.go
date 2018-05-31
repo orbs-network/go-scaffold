@@ -37,7 +37,7 @@ func TestTransferHandler(t *testing.T) {
 		s.Start(pa, &stop)
 
 		pa.When("Transfer", &publicapi.TransferInput{Transaction: &protocol.Transaction{From: &protocol.Address{Username: "user1"}, To: &protocol.Address{Username: "user2"}, Amount: 1700}}).Return(&publicapi.TransferOutput{Success: "ok", Result: 10}, tt.transferErr)
-		req, _ := http.NewRequest("GET", tt.url, nil)
+		req, _ := http.NewRequest("POST", tt.url, nil)
 		rec := httptest.NewRecorder()
 		s.(*server).transferHandler(rec, req)
 		if tt.errs {

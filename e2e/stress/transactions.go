@@ -95,7 +95,7 @@ func randomizeAmount() int32 {
 
 func sendTransaction(client *http.Client, from string, to string, amount int32, done *chan error) {
 	url := fmt.Sprintf("http://localhost:8080/api/transfer?from=%s&to=%s&amount=%d", from, to, amount)
-	resp, err := client.Get(url)
+	resp, err := client.Post(url, "text/plain", nil)
 	if err == nil {
 		ioutil.ReadAll(resp.Body)
 		resp.Body.Close()
